@@ -1,0 +1,73 @@
+.container_sb{
+    background-color: #FF8383;
+}
+.bttn_sb{
+    background-color: #fd5656;
+    color: #434242;
+}
+
+._sm>a>span{
+    width: 38px;
+    height: 30px;
+    background-image: url("./img/sprite.png");
+}
+._sm>a{
+    display: flex;
+    align-items: center;
+}
+.fb{
+    background-position: -25px -25px;
+}
+.inst{
+    background-position: -221px -25px;
+}
+.yt{
+    background-position: -143px -25px;
+}
+.tw{
+    background-position: -64px -24px;
+}
+.prdt_card{
+    border: 1px solid #FF8383;
+    background-color: #ffffff;
+}
+.prdt_card img{
+    border-bottom:1px solid #FF8383;
+}
+.prdt_card a.btn{
+    font-size: .75rem;
+    padding:.2rem .38rem;
+}
+.prdt_card .card-text{
+    height: 95px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    display:-webkit-box;
+    -webkit-line-clamp: 4;
+    line-clamp: 4;
+}
+.prdt_card .card-title{
+    height: 24px;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+._appCartIcn{
+    color: #d212ff;
+    animation: anim .1s;
+}
+.cartItems{
+    top:-12px;
+    left: 26px;
+    color: #fd5656;
+    font-size: 13px;
+    font-weight: 600;
+}
+@keyframes anim {
+    from {scale:1;}
+    to {scale:1.2;}
+}
+
+.prod_view{
+    text-decoration: none;
+}
