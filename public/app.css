@@ -1,9 +1,10 @@
 .container_sb{
-    background-color: #FF8383;
+    background-color: #1b48ff;
 }
 .bttn_sb{
-    background-color: #fd5656;
-    color: #434242;
+    background-color: #1b48ff;
+    color: #ffffff;
+    border:1px solid #1737b4 !important;
 }
 
 ._sm>a>span{
@@ -28,11 +29,12 @@
     background-position: -64px -24px;
 }
 .prdt_card{
-    border: 1px solid #FF8383;
+    border: 1px solid #1b48ff;
     background-color: #ffffff;
+    color: #fff;
 }
 .prdt_card img{
-    border-bottom:1px solid #FF8383;
+    border-bottom:1px solid #1b48ff;
 }
 .prdt_card a.btn{
     font-size: .75rem;
@@ -52,14 +54,17 @@
     white-space: nowrap;
     text-overflow: ellipsis;
 }
+.prdt_card .card-body{
+    background-color: #1b48ff;
+}
 ._appCartIcn{
-    color: #d212ff;
+    color: #1b48ff;
     animation: anim .1s;
 }
 .cartItems{
     top:-12px;
     left: 26px;
-    color: #fd5656;
+    color: #1b48ff;
     font-size: 13px;
     font-weight: 600;
 }
@@ -70,4 +75,8 @@
 
 .prod_view{
     text-decoration: none;
+}
+
+button._loginBtn,.button._loginBtn:hover{
+    background-color:#1b48ff !important;
 }

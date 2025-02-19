@@ -29,7 +29,7 @@ export default function HeaderTop(){
                     <Link to=""><span className="inst d-inline-block"></span></Link>
                     <Link to=""><span className="yt d-inline-block"></span></Link>
                 </div>
-                <button className="btn btn-danger">Login</button>
+                <button type="button" className="btn btn-danger _loginBtn border-0 rounded-0">Login</button>
             </div>
             <section className="container_sb mb-4 pt-5">
                     <div className="row justify-content-center  m-0">

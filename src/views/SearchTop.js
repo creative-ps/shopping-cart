@@ -7,7 +7,7 @@ export default function SearchTop({handleSubmit, handleChange, handleKeyDown, sr
                     <div class="input-group">
                             <input 
                                 type="search" 
-                                className="form-control border-0 p-2"
+                                className="form-control border-0 p-2 rounded-0"
                                 placeholder="Search by category : beauty, fragrances, furniture, groceries."
                                 data-testid="home-search-bar"
                                 onChange={handleChange}
@@ -17,7 +17,7 @@ export default function SearchTop({handleSubmit, handleChange, handleKeyDown, sr
                                 aria-describedby="basic-addon2"
                             />
                             <button type="button" 
-                                className="bttn_sb input-group-text fw-medium border-0"
+                                className="bttn_sb input-group-text fw-medium border-0 rounded-0"
                                 data-testid="click here"
                                 onClick={handleSubmit}>   
                                 Click here
