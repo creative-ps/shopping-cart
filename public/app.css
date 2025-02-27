@@ -80,3 +80,20 @@
 button._loginBtn,.button._loginBtn:hover{
     background-color:#1b48ff !important;
 }
+.rating_stars,.rating_stars_overlay{
+    height: 21px;
+    background: url(img/5star.jpg) 0 0 no-repeat;
+    background-size: 127px;
+    overflow: hidden;
+    background-position: 0px 0px;
+}
+.rating_stars_overlay{
+    background-position: -51px -51px;
+    width: 131px;
+}
+.rating_stars{
+    width:260px;
+}
+.reviewer>div{
+    border-top: 1px dashed #1b48ff;
+}

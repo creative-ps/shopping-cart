@@ -55,6 +55,7 @@ module.exports = {
         hot:true,
         liveReload:true,
         historyApiFallback: true,
+        // watchContentBase: true,
     },
     target:'web',
     plugins: [
