@@ -54,6 +54,7 @@ module.exports = {
         open:true,
         hot:true,
         liveReload:true,
+        historyApiFallback: true,
     },
     target:'web',
     plugins: [

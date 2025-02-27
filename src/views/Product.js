@@ -1,7 +1,7 @@
 import React from "react";
 export default function Card({src,alt,title,description,price,onClick}){
     return <div className="card prdt_card rounded-0">
-                <img src={src} className="card-img-top" alt="..."/>
+                <img src={src} className="card-img-top" height={305} width={304} alt="..."/>
                 <div className="card-body">
                 <h5 className="card-title">{title}</h5>
                 <p className="card-text">{description}</p>
