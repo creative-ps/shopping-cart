@@ -5,19 +5,8 @@ import { useContext } from "react";
 import {CartContext} from "./utility/cartContext";
 
 const SearchResult = ()=>{
-    const {cartItem, setCartItems} = useContext(CartContext);
-    const [fetchData, setFetchData] = useState([]);
+    const {cartItem, setCartItems, pData} = useContext(CartContext);
     const {cate} = useParams();
-    useEffect(()=>{
-        let url = "https://dummyjson.com/products";
-        fetch(url)
-        .then((res)=>res.json())
-        .then((data)=>{
-            setFetchData(data.products);
-            // console.info(data.products);
-            // console.info(cate);
-        })
-    },[]);
 
     const handleAddToCart = (id)=>{
         setCartItems([
@@ -29,7 +18,7 @@ const SearchResult = ()=>{
     if(cate === undefined){
         return <>{"..."}</>
     }
-    let result =  fetchData.map((itm)=> 
+    let result =  pData.map((itm)=> 
                     {
                         if(itm.category === cate){
                             return(

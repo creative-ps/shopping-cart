@@ -3,17 +3,8 @@ import Card from "./views/Product";
 import {CartContext} from "./utility/cartContext";
 import { Link } from "react-router";
 
-export default function AllData({url}){
-    const {cartItem, setCartItems} = useContext(CartContext);
-    const [prd,setPrd] = useState([]);
-    useEffect(()=>{
-        fetch(url)
-        .then((response) => response.json())
-        .then((data) =>{
-            console.info(data.products);
-            setPrd(data.products);
-        });
-    },[]);  
+export default function AllData(){
+    const {cartItem, setCartItems, pData} = useContext(CartContext);
 
     const handleAddToCart = (obj)=>{
         setCartItems([
@@ -22,7 +13,7 @@ export default function AllData({url}){
         ]); 
     }
     
-    return prd.map((itm) =>  <div className="col-3 pb-4" key={itm.title}>
+    return pData.map((itm) =>  <div className="col-3 pb-4" key={itm.title}>
                                 <Link className="prod_view" to={itm.category+'/'+itm.title}>
                                     <Card
                                     src={itm.thumbnail}

@@ -6,15 +6,6 @@ import SearchResult from "./SearchResult";
 import AllData from "./AllProducts";
 export default function Main(){
     const [srchRes, setSrchRes] = useState("");
-    const dataUrl = 'https://dummyjson.com/products';
-    // const handleProducts = (getProduct)=>{
-    //     // const res = getData();
-    //     data.filter((res)=>{
-    //         if(itm.name == getProduct){
-    //             setSrchRes(itm)
-    //         }
-    //     })
-    // }
     
 
     return  <>
@@ -23,7 +14,7 @@ export default function Main(){
                         <div className="container">
                             <div className="row">
                                 {/* <SearchResult srchRes={srchRes}/> */}
-                                <AllData url={dataUrl}/>
+                                <AllData/>
                             </div>
                         </div>
                     </section>
