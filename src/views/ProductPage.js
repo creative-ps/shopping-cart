@@ -13,6 +13,10 @@ export default function ProductPage(){
                         
                             <div className="col-sm-4">
                                 <img src={ele.thumbnail} width={"300"} height={""} title={ele.title} alt={ele.title}/>
+                                <div className="d-flex justify-content-between">
+                                    <input type="number" className="ps-2" min={0} max={20} step={1} value={0}/>
+                                    <button type="button" className="rounded-0 btn btn-warning">Add to cart</button>
+                                </div>
                             </div>
 
                             <div className="col-sm-8">
