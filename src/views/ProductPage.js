@@ -1,21 +1,66 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { useParams } from "react-router";
 import { CartContext } from "../utility/cartContext";
 import { calculate_discount_price } from "../utility/calculate_discounted_price";
 export default function ProductPage(){
-    const {cartItem} = useContext(CartContext);
+    const {setProducts, products, setCart, cart} = useContext(CartContext);
     const {category, title} = useParams();
-    let ele = cartItem.find((element) => element.title == title);
+    const [numInput, setNumInput] = useState(0);
+    let ele = products.find((element) => element.title == title);
+    const handleAddToCart = (obj)=>{
+        const objN = cart.find((eleN) => eleN.id == obj.id);
+        let objNa = null;
+            if(objN){
+                objNa = Object.assign({},obj,objN);  
+                setCart([
+                    ...cart,
+                    objNa
+                ]);
+                return;
+            }
+        
+        setCart([
+            ...cart,
+            obj
+        ]); 
+    }
+    const handleOnchange = (e) => {
+        setNumInput(e.target.value);
+    }
     return <>
-                <div className="productPage container">
-                    
-                    <div className="row">
-                        
+    {JSON.stringify(objNa)}
+                <div className="productPage container">  
+                    <div className="row">      
                             <div className="col-sm-4">
                                 <img src={ele.thumbnail} width={"300"} height={""} title={ele.title} alt={ele.title}/>
                                 <div className="d-flex justify-content-between">
-                                    <input type="number" className="ps-2" min={0} max={20} step={1} value={0}/>
-                                    <button type="button" className="rounded-0 btn btn-warning">Add to cart</button>
+
+                                    <input type="number" 
+                                    onChange={handleOnchange} 
+                                    className="ps-2" 
+                                    min={0} 
+                                    max={20} 
+                                    step={1} 
+                                    value={numInput}/>
+
+                                    <button 
+                                    type="button" 
+                                    disabled={(numInput == 0) ? true : false}
+                                    onClick={() => {
+                                        handleAddToCart(
+                                            {
+                                                id:ele.id,
+                                                pic:ele.thumbnail,
+                                                name:ele.title,
+                                                price:ele.price,
+                                                brand:ele.brand,
+                                                numItms:numInput
+                                            }
+                                        )
+                                    }}
+                                    className="rounded-0 btn btn-warning">
+                                        Add to cart
+                                    </button>
                                 </div>
                             </div>
 
@@ -55,10 +100,8 @@ export default function ProductPage(){
                                             </>  
                                         )
                                     }
-                                </div>
-                                
+                                </div>    
                             </div>
-                        
                     </div>
                 </div>
            </>;

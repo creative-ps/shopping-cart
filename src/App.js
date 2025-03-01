@@ -4,19 +4,20 @@ import { CartContext } from "./utility/cartContext";
 import HeaderTop from "./views/HeaderTop";
 import FooterBottom from "./views/FooterBottom";
 export default function App(){
-    const [cartItem, setCartItems] = useState([]);
+    const [products, setProducts] = useState([]);
+    const [cart, setCart] = useState([]);
 
     useEffect(()=>{
         fetch('https://dummyjson.com/products')
         .then((data)=>data.json())
         .then((res)=>{
-            setCartItems(res.products);
+            setProducts(res.products);
         }
         );
     },[]);
 
     return  <>
-                <CartContext.Provider value={{cartItem, setCartItems}}>
+                <CartContext.Provider value={{products, setProducts, cart, setCart}}>
                     <HeaderTop/>
                     <Outlet/>
                     <FooterBottom/>

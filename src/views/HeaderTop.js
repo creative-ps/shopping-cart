@@ -4,11 +4,11 @@ import { Link } from "react-router";
 import { CartContext } from "../utility/cartContext";
 export default function HeaderTop(){
     const crtItems = useContext(CartContext);
-    const TotalCrtItems = crtItems.cartItem.length;
+    const TotalCrtItems = crtItems.cart.length;
     let cartItemsSend = encodeURI(`/cart/?itmLength=${TotalCrtItems}`);
     
     if(TotalCrtItems>0){
-        crtItems.cartItem.forEach((ele,index) => {
+        crtItems.products.forEach((ele,index) => {
             localStorage.setItem("itm"+index,JSON.stringify(ele));
         });
     }

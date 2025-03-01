@@ -46,7 +46,7 @@ export default function Cart(){
                     <tr key={item.id}>
                         <td> {indx+1} </td>
                         <td> <img src={item.pic} width={100} /></td>
-                        <td>{}</td>
+                        <td>{item.numItms}</td>
                         <td> {item.name} </td>
                         <td> {item.brand} </td>
                         <td> {item.price} </td>

@@ -5,12 +5,12 @@ import { useContext } from "react";
 import {CartContext} from "./utility/cartContext";
 
 const SearchResult = ()=>{
-    const {cartItem, setCartItems} = useContext(CartContext);
+    const {products, setProducts, cart, setCart} = useContext(CartContext);
     const {cate} = useParams();
 
     const handleAddToCart = (id)=>{
-        setCartItems([
-            ...cartItem,
+        setCart([
+            ...cart,
             id
         ]); 
     }
@@ -18,7 +18,7 @@ const SearchResult = ()=>{
     if(cate === undefined){
         return <>{"..."}</>
     }
-    let result =  cartItem.map((itm)=> 
+    let result =  products.map((itm)=> 
                     {
                         if(itm.category === cate){
                             return(

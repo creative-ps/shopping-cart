@@ -4,16 +4,16 @@ import {CartContext} from "./utility/cartContext";
 import { Link } from "react-router";
 
 export default function AllData(){
-    const {cartItem, setCartItems} = useContext(CartContext);
+    const {products, setProducts} = useContext(CartContext);
 
-    const handleAddToCart = (obj)=>{
-        setCartItems([
-            ...cartItem,
-            obj
-        ]); 
-    }
+    // const handleAddToCart = (obj)=>{
+    //     setProducts([
+    //         ...products,
+    //         obj
+    //     ]); 
+    // }
     
-    return cartItem.map((itm) => {
+    return products.map((itm) => {
                                 const category = itm.category;
                                 const title = itm.title;
                                 return <div className="col-3 pb-4" key={itm.title}>
@@ -23,15 +23,17 @@ export default function AllData(){
                                                 title={itm.title}
                                                 price={itm.price}
                                                 description={itm.description}
-                                                onClick={()=>{handleAddToCart(
-                                                    {
-                                                        id:itm.id,
-                                                        pic:itm.thumbnail,
-                                                        name:itm.title,
-                                                        price:itm.price,
-                                                        brand:itm.brand
-                                                    }
-                                                )}}
+                                                onClick={()=>{
+                                                //     handleAddToCart(
+                                                //     {
+                                                //         id:itm.id,
+                                                //         pic:itm.thumbnail,
+                                                //         name:itm.title,
+                                                //         price:itm.price,
+                                                //         brand:itm.brand
+                                                //     }
+                                                // )
+                                            }}
                                                 /> 
                                             </Link>
                                       </div>
