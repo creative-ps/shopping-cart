@@ -4,7 +4,7 @@ import {CartContext} from "./utility/cartContext";
 import { Link } from "react-router";
 
 export default function AllData(){
-    const {cartItem, setCartItems, pData} = useContext(CartContext);
+    const {cartItem, setCartItems} = useContext(CartContext);
 
     const handleAddToCart = (obj)=>{
         setCartItems([
@@ -13,7 +13,7 @@ export default function AllData(){
         ]); 
     }
     
-    return pData.map((itm) => {
+    return cartItem.map((itm) => {
                                 const category = itm.category;
                                 const title = itm.title;
                                 return <div className="col-3 pb-4" key={itm.title}>

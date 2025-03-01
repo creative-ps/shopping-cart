@@ -3,9 +3,9 @@ import { useParams } from "react-router";
 import { CartContext } from "../utility/cartContext";
 import { calculate_discount_price } from "../utility/calculate_discounted_price";
 export default function ProductPage(){
-    const {pData} = useContext(CartContext);
+    const {cartItem} = useContext(CartContext);
     const {category, title} = useParams();
-    let ele = pData.find((element) => element.title == title);
+    let ele = cartItem.find((element) => element.title == title);
     return <>
                 <div className="productPage container">
                     

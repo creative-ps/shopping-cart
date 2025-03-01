@@ -5,19 +5,18 @@ import HeaderTop from "./views/HeaderTop";
 import FooterBottom from "./views/FooterBottom";
 export default function App(){
     const [cartItem, setCartItems] = useState([]);
-    const [pData, setPdata] = useState([]);
 
     useEffect(()=>{
         fetch('https://dummyjson.com/products')
         .then((data)=>data.json())
         .then((res)=>{
-            setPdata(res.products);
+            setCartItems(res.products);
         }
         );
     },[]);
 
     return  <>
-                <CartContext.Provider value={{cartItem, setCartItems, pData}}>
+                <CartContext.Provider value={{cartItem, setCartItems}}>
                     <HeaderTop/>
                     <Outlet/>
                     <FooterBottom/>

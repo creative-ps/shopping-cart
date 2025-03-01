@@ -5,7 +5,7 @@ import { useContext } from "react";
 import {CartContext} from "./utility/cartContext";
 
 const SearchResult = ()=>{
-    const {cartItem, setCartItems, pData} = useContext(CartContext);
+    const {cartItem, setCartItems} = useContext(CartContext);
     const {cate} = useParams();
 
     const handleAddToCart = (id)=>{
@@ -18,7 +18,7 @@ const SearchResult = ()=>{
     if(cate === undefined){
         return <>{"..."}</>
     }
-    let result =  pData.map((itm)=> 
+    let result =  cartItem.map((itm)=> 
                     {
                         if(itm.category === cate){
                             return(
