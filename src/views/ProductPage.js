@@ -7,17 +7,19 @@ export default function ProductPage(){
     const {category, title} = useParams();
     const [numInput, setNumInput] = useState(0);
     let ele = products.find((element) => element.title == title);
+    let objNa = null;
     const handleAddToCart = (obj)=>{
-        const objN = cart.find((eleN) => eleN.id == obj.id);
-        let objNa = null;
-            if(objN){
-                objNa = Object.assign({},obj,objN);  
-                setCart([
-                    ...cart,
-                    objNa
-                ]);
-                return;
-            }
+        // const objN = cart.find((eleN) => eleN.id == obj.id);
+        //     if(objN){
+        //         objNa = Object.assign({},objN,obj); 
+        //         console.info(cart,"objNa");
+
+        //         setCart([
+        //             ...cart,
+        //             objNa
+        //         ]);
+        //         return;
+        //     }
         
         setCart([
             ...cart,
@@ -28,24 +30,25 @@ export default function ProductPage(){
         setNumInput(e.target.value);
     }
     return <>
-    {JSON.stringify(objNa)}
+    {JSON.stringify(cart)}
+    {JSON.stringify(numInput)}
                 <div className="productPage container">  
                     <div className="row">      
-                            <div className="col-sm-4">
+                            <div className="col-sm-4 text-center">
                                 <img src={ele.thumbnail} width={"300"} height={""} title={ele.title} alt={ele.title}/>
                                 <div className="d-flex justify-content-between">
 
-                                    <input type="number" 
+                                    {/* <input type="number" 
                                     onChange={handleOnchange} 
                                     className="ps-2" 
                                     min={0} 
                                     max={20} 
                                     step={1} 
-                                    value={numInput}/>
+                                    value={numInput}/> */}
 
                                     <button 
                                     type="button" 
-                                    disabled={(numInput == 0) ? true : false}
+                                    // disabled={(numInput == 0) ? true : false}
                                     onClick={() => {
                                         handleAddToCart(
                                             {
@@ -58,7 +61,7 @@ export default function ProductPage(){
                                             }
                                         )
                                     }}
-                                    className="rounded-0 btn btn-warning">
+                                    className="rounded-0 btn btn-warning w-100 mt-2">
                                         Add to cart
                                     </button>
                                 </div>
